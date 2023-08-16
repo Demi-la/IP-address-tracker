@@ -34,7 +34,7 @@ function Tracker() {
     try {
       const getInitialData = async () => {
         const res = await fetch(
-          `https://geo.ipify.org/api/v2/country,city?apiKey=at_E6rGGPi6ji5ezQcuyL3PdInHUsElB&ipAddress=8.8.8.8`
+          `https://geo.ipify.org/api/v2/country,city?apiKey=${process.env.REACT_APP_API_KEY}&ipAddress=8.8.8.8`
         );
         const data = await res.json();
         setAddress(data);
@@ -48,7 +48,9 @@ function Tracker() {
 
   async function getEnteredAddress() {
     const res = await fetch(
-      `https://geo.ipify.org/api/v2/country,city?apiKey=at_E6rGGPi6ji5ezQcuyL3PdInHUsElB&ipAddress${
+      `https://geo.ipify.org/api/v2/country,city?apiKey=${
+        process.env.REACT_APP_API_KEY
+      }&${
         checkIpAddress.test(ipAddress)
           ? `&ipAddress=${ipAddress}`
           : checkDomain.test(ipAddress)
