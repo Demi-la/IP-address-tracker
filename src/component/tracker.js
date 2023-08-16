@@ -20,7 +20,7 @@ import Markerposition from './marker';
 
 import '../index.css';
 
-//https://geo.ipify.org/api/v2/country,city?apiKey=at_E6rGGPi6ji5ezQcuyL3PdInHUsElB&ipAddress=8.8.8.8
+
 
 function Tracker() {
   const [address, setAddress] = useState(null);
